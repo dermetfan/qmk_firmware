@@ -52,6 +52,8 @@
 #    define TAPPING_TERM 200
 #endif // TAPPING_TERM
 
+#define TAPPING_TOGGLE 2
+
 /* Charybdis-specific features. */
 
 #ifdef POINTING_DEVICE_ENABLE
