@@ -45,8 +45,9 @@ static uint16_t auto_pointer_layer_timer = 0;
 
 #define LOWER TT(LAYER_LOWER)
 #define RAISE TT(LAYER_RAISE)
-#define POINTER TT(LAYER_POINTER)
+#define PT_BTN1 LT(LAYER_POINTER, KC_BTN1)
 #define PT_RCTL LT(LAYER_POINTER, KC_RCTL)
+#define PT_TOGL TG(LAYER_POINTER)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -61,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_BSPC,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_P,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, PT_RCTL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                             LALT_T(KC_BSPC), LOWER, KC_LSFT,      RAISE,  KC_SPC,
-                                    LCTL_T(KC_ESC), POINTER,     KC_ENT
+                                    LCTL_T(KC_ESC), PT_BTN1,     KC_ENT
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -101,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, KC_BTN3, KC_BTN2, KC_BTN1, SNIPING,    SNIPING, KC_BTN1, KC_BTN2, KC_BTN3, XXXXXXX, XXXXXXX,
+       XXXXXXX, PT_TOGL, KC_BTN3, KC_BTN2, KC_BTN1, SNIPING,    SNIPING, KC_BTN1, KC_BTN2, KC_BTN3, PT_TOGL, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, XXXXXXX, XXXXXXX, XXXXXXX, EEP_RST,   RESET,      RESET, EEP_RST, XXXXXXX, XXXXXXX, XXXXXXX, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
