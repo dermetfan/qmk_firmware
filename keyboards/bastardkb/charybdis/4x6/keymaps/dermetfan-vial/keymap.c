@@ -29,6 +29,7 @@ enum charybdis_keymap_layers {
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
+#undef CHARYBDIS_AUTO_SNIPING_ON_LAYER
 
 #ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 static uint16_t auto_pointer_layer_timer = 0;
@@ -100,9 +101,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, KC_BTN3, KC_BTN2, KC_BTN1, XXXXXXX,    XXXXXXX, KC_BTN1, KC_BTN2, KC_BTN3, XXXXXXX, XXXXXXX,
+       XXXXXXX, XXXXXXX, KC_BTN3, KC_BTN2, KC_BTN1, SNIPING,    SNIPING, KC_BTN1, KC_BTN2, KC_BTN3, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, XXXXXXX, XXXXXXX, SNIPING, EEP_RST,   RESET,      RESET, EEP_RST, SNIPING, XXXXXXX, XXXXXXX, _______,
+       _______, XXXXXXX, XXXXXXX, XXXXXXX, EEP_RST,   RESET,      RESET, EEP_RST, XXXXXXX, XXXXXXX, XXXXXXX, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, XXXXXXX, DRGSCRL,    XXXXXXX, XXXXXXX,
                                            _______, _______,    XXXXXXX
