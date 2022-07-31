@@ -56,12 +56,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
         KC_TAB,    KC_Q,    KC_W,    KC_D,    KC_F,    KC_K,       KC_J,    KC_U,    KC_R,    KC_L, KC_SCLN, KC_BSLS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-        KC_ESC,    KC_A,    KC_S,    KC_E,    KC_T,    KC_G,       KC_Y,    KC_N,    KC_I,    KC_O,    KC_H, KC_QUOT,
+       KC_LCTL,    KC_A,    KC_S,    KC_E,    KC_T,    KC_G,       KC_Y,    KC_N,    KC_I,    KC_O,    KC_H, KC_QUOT,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_LALT,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_P,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_RCTL,
+       KC_LGUI,    PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_P,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_RCTL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  KC_BSPC,  KC_ENT, KC_LGUI,     LOWER,   KC_SPC,
-                                           KC_LSFT, KC_LCTL,     RAISE
+                                   KC_ESC, KC_LSFT, KC_LALT,     RAISE,   KC_SPC,
+                                             LOWER, KC_BSPC,    KC_ENT
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -75,8 +75,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                   KC_DEL, _______, _______,    _______, _______,
-                                           _______, _______,    XXXXXXX
+                                  _______, _______, _______,    XXXXXXX, _______,
+                                           _______,  KC_DEL,    _______
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -90,8 +90,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_MUTE, XXXXXXX, XXXXXXX, KC_SLEP,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  XXXXXXX, XXXXXXX, _______,    XXXXXXX, XXXXXXX,
-                                           _______, _______,    _______
+                                  XXXXXXX, _______, XXXXXXX,    _______, XXXXXXX,
+                                           _______, XXXXXXX,    XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -101,12 +101,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DRGSCRL, XXXXXXX,
+       _______, DRGSCRL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DRGSCRL, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       PT_TOGL, _______, DRGSCRL, SNIPING, EEP_RST,   RESET,      RESET, EEP_RST, SNIPING, DRGSCRL, _______, PT_TOGL,
+       _______, _______, PT_TOGL, SNIPING, EEP_RST,   RESET,      RESET, EEP_RST, SNIPING, PT_TOGL, _______, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   XXXXXXX, KC_BTN1, KC_BTN2,    KC_BTN2, KC_BTN1,
-                                           _______, KC_BTN3,    KC_BTN3
+                                           XXXXXXX, KC_BTN3,    KC_BTN3
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 };
