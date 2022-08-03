@@ -33,6 +33,7 @@ enum charybdis_keymap_layers {
 
 #ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 static uint16_t auto_pointer_layer_timer = 0;
+static HSV auto_pointer_layer_prev_hsv;
 
 #    ifndef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS
 #        define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 1000
@@ -122,6 +123,7 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
             layer_on(LAYER_POINTER);
 #        ifdef RGB_MATRIX_ENABLE
             rgb_matrix_mode_noeeprom(RGB_MATRIX_NONE);
+            auto_pointer_layer_prev_hsv = rgb_matrix_get_hsv();
             rgb_matrix_sethsv_noeeprom(HSV_GREEN);
 #        endif // RGB_MATRIX_ENABLE
         }
@@ -136,6 +138,7 @@ void matrix_scan_user(void) {
         layer_off(LAYER_POINTER);
 #        ifdef RGB_MATRIX_ENABLE
         rgb_matrix_mode_noeeprom(RGB_MATRIX_STARTUP_MODE);
+        rgb_matrix_sethsv_noeeprom(auto_pointer_layer_prev_hsv.h, auto_pointer_layer_prev_hsv.s, auto_pointer_layer_prev_hsv.v);
 #        endif // RGB_MATRIX_ENABLE
     }
 }
