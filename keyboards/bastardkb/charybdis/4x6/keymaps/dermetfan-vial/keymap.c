@@ -50,6 +50,7 @@ static HSV auto_pointer_layer_prev_hsv;
 #define PT_H LT(LAYER_POINTER, KC_H)
 #define GI_Z LGUI_T(KC_Z)
 #define GI_SLSH RGUI_T(KC_SLSH)
+#define RS_BSPC LT(LAYER_RAISE, KC_BSPC)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_LCTL,    GI_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_P,    KC_M, KC_COMM,  KC_DOT, GI_SLSH, KC_RCTL,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                     KC_LALT, LOWER, KC_BSPC,     KC_ENT,  KC_SPC,
-                                            KC_ESC, KC_LCTL,      RAISE
+                                            KC_LCTL, KC_ESC,    RS_BSPC
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
