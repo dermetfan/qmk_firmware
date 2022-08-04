@@ -52,7 +52,7 @@
 #    define TAPPING_TERM 200
 #endif // TAPPING_TERM
 
-#define TAPPING_TOGGLE 2
+#define TAPPING_TOGGLE 3
 
 /* Charybdis-specific features. */
 
