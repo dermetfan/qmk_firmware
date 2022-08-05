@@ -155,6 +155,49 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #ifdef RGB_MATRIX_ENABLE
 // Forward-declare this helper function since it is defined in rgb_matrix.c.
 void rgb_matrix_update_pwm_buffers(void);
+
+// Layer indicator with only configured keys.
+// Adapted from https://docs.qmk.fm/#/feature_rgb_matrix?id=indicator-examples.
+void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    uint8_t layer = get_highest_layer(layer_state);
+    if (layer == 0) return;
+
+    for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
+        for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
+            uint8_t index = g_led_config.matrix_co[row][col];
+            uint8_t keycode = keymap_key_to_keycode(layer, (keypos_t){col,row});
+
+            if (
+                index < led_min || index > led_max || index == NO_LED ||
+                keycode < KC_TRNS
+            ) continue;
+
+            // Opposite hue from current.
+            HSV hsv = rgb_matrix_get_hsv();
+            hsv.h += 255 / 2;
+
+            // Modifiers get a different hue.
+            if (HAS_FLAGS(g_led_config.flags[index], LED_FLAG_MODIFIER)) {
+                hsv.h += 255 / 4;
+            }
+
+            // Limit brightness to current.
+            uint8_t rgb_val = rgb_matrix_get_val();
+            if (hsv.v > rgb_val) {
+                hsv.v = rgb_val;
+            }
+
+            // Half the brightness for KC_TRNS.
+            if (keycode == KC_TRNS) {
+                hsv.v /= 2;
+            }
+
+            RGB rgb = hsv_to_rgb(hsv);
+
+            rgb_matrix_set_color(index, rgb.r, rgb.g, rgb.b);
+        }
+    }
+}
 #endif
 
 void shutdown_user(void) {

@@ -65,6 +65,9 @@
 
 #define CHARYBDIS_DRAGSCROLL_REVERSE_Y
 
+// For rgb_matrix_indicators_advanced_user().
+#define SPLIT_LAYER_STATE_ENABLE
+
 /* RGB Matrix. */
 
 #ifdef RGB_MATRIX_ENABLE
