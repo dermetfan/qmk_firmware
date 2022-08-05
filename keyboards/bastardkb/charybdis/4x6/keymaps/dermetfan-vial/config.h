@@ -68,6 +68,8 @@
 /* RGB Matrix. */
 
 #ifdef RGB_MATRIX_ENABLE
+#    define RGB_TRIGGER_ON_KEYDOWN
+
 // Limit maximum brightness to keep power consumption reasonable, and avoid
 // disconnects.
 #    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
