@@ -55,6 +55,7 @@ static HSV auto_pointer_layer_prev_hsv;
 #define TAB_NXT LCTL(KC_PGDN)
 #define TAB_NEW LCTL(KC_T)
 #define TAB_CLS LCTL(KC_W)
+#define TAB_RST LCTL(LSFT(KC_T))
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -79,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______,  KC_ESC, TAB_PRV, TAB_NEW, TAB_NXT, XXXXXXX,    KC_PGUP, KC_HOME,   KC_UP,  KC_END,  KC_DEL, KC_PSCR,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_INS, _______,
+       _______, KC_CAPS, XXXXXXX, TAB_RST, XXXXXXX, XXXXXXX,    KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_INS, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, XXXXXXX, XXXXXXX, TAB_CLS, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
