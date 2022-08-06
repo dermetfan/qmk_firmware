@@ -194,13 +194,12 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 hsv.v = rgb_val;
             }
 
-            // Half the brightness for KC_TRNS.
+            // Quarter the brightness for KC_TRNS.
             if (keycode == KC_TRNS) {
-                hsv.v /= 2;
+                hsv.v /= 4;
             }
 
             RGB rgb = hsv_to_rgb(hsv);
-
             rgb_matrix_set_color(index, rgb.r, rgb.g, rgb.b);
         }
     }
