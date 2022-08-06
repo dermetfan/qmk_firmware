@@ -52,6 +52,7 @@ static HSV auto_pointer_layer_prev_hsv;
 #define GI_SLSH RGUI_T(KC_SLSH)
 #define RSFT_QT RSFT_T(KC_QUOT)
 #define TAB_PRV LCTL(KC_PGUP)
+#define TAB_SWT LCTL(KC_TAB)
 #define TAB_NXT LCTL(KC_PGDN)
 #define TAB_NEW LCTL(KC_T)
 #define TAB_CLS LCTL(KC_W)
@@ -78,11 +79,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
         KC_GRV, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_SCRL, KC_PAUS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______,  KC_ESC, TAB_PRV, TAB_NEW, TAB_NXT, XXXXXXX,    KC_PGUP, KC_HOME,   KC_UP,  KC_END,  KC_DEL, KC_PSCR,
+       _______,  KC_ESC, TAB_PRV, TAB_SWT, TAB_NXT, XXXXXXX,    KC_PGUP, KC_HOME,   KC_UP,  KC_END,  KC_DEL, KC_PSCR,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, KC_CAPS, XXXXXXX, TAB_RST, XXXXXXX, XXXXXXX,    KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_INS, _______,
+       _______, KC_CAPS, TAB_RST, TAB_CLS, TAB_NEW, XXXXXXX,    KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_INS, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, XXXXXXX, XXXXXXX, TAB_CLS, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, _______, _______,    _______, _______,
                                            XXXXXXX, XXXXXXX,    _______
