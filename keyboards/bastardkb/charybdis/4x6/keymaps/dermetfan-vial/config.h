@@ -49,7 +49,7 @@
  *
  * See docs.qmk.fm/using-qmk/software-features/tap_hold#tapping-term
  */
-#    define TAPPING_TERM 200
+#    define TAPPING_TERM 150
 #endif // TAPPING_TERM
 
 #define TAPPING_TOGGLE 3
